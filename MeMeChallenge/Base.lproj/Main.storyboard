@@ -39,15 +39,15 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Xye-TR-ofS"/>
                                 </items>
                             </toolbar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gsx-HU-GLl">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="gsx-HU-GLl">
                                 <rect key="frame" x="296" y="183" width="8" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OO2-ic-zxc">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="OO2-ic-zxc">
                                 <rect key="frame" x="297" y="459" width="8" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
