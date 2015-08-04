@@ -23,11 +23,19 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eSn-Hk-57b">
                                 <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                                 <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="SZj-gk-XlD"/>
                                     <barButtonItem title="Pick" id="D7J-gA-zGD">
                                         <connections>
                                             <action selector="pickClicked:" destination="BYZ-38-t0r" id="rXB-OK-kAE"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="vuh-42-lHN"/>
+                                    <barButtonItem systemItem="camera" id="UIE-jn-zqb">
+                                        <connections>
+                                            <action selector="cameraClicked:" destination="BYZ-38-t0r" id="gbH-H4-Pby"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Xye-TR-ofS"/>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -43,6 +51,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cameraButton" destination="UIE-jn-zqb" id="9QM-De-me5"/>
                         <outlet property="imageView" destination="331-yR-UAB" id="T5b-b7-iTD"/>
                     </connections>
                 </viewController>
