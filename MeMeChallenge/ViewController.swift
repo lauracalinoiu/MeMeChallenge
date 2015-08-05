@@ -32,14 +32,15 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewDidLoad()
         topTextField.text = initialTopText
         bottomTextField.text = initialBottomText
-        topTextField.textAlignment = .Center
-        bottomTextField.textAlignment = .Center
         
         topTextField.delegate = self
         bottomTextField.delegate = self
         
         topTextField.defaultTextAttributes = memeTextAttributes
         bottomTextField.defaultTextAttributes = memeTextAttributes
+        
+        topTextField.textAlignment = .Center
+        bottomTextField.textAlignment = .Center
     }
     
     override func viewWillAppear(animated: Bool){
