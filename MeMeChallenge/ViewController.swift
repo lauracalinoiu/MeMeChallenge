@@ -30,6 +30,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var navbar: UINavigationBar!
     @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -44,12 +45,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         topTextField.textAlignment = .Center
         bottomTextField.textAlignment = .Center
+        
+        shareButton.enabled = false
     }
     
     override func viewWillAppear(animated: Bool){
         super.viewWillAppear(animated)
         cameraButton.enabled = UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera)
-        
         self.subscribeToKeyboardNotifications()
     }
     
@@ -103,8 +105,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
-        self.dismissViewControllerAnimated(true, completion: nil)
         imageView.image = image
+        shareButton.enabled = true
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
@@ -142,13 +145,24 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     }
     
     @IBAction func sendMeme(sender: UIBarButtonItem) {
-        save()
-    }
+        let memedGenerate = generateMemedImage()
+        let activityViewController = UIActivityViewController(activityItems: [memedGenerate], applicationActivities: nil)
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+        
+        activityViewController.completionWithItemsHandler = {
+            (activity, success, items, error) in
+            print("Activity: \(activity) Success: \(success) Items: \(items) Error: \(error)")
+            self.save()
+        }    }
     
     func save() {
         //Create the meme
         let meme = MeMe(top: topTextField.text!, bottom: bottomTextField.text!, origImage: imageView.image!, memedImg: generateMemedImage())
-        imageView.image = meme.memedImg
+        
+        // Add it to the memes array in the Application Delegate
+        let object = UIApplication.sharedApplication().delegate
+        let appDelegate = object as! AppDelegate
+        appDelegate.memes.append(meme)
     }
     
     func generateMemedImage() -> UIImage

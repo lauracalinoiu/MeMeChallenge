@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D362ED6E1B7359B500EAE5F5 /* SentMemsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D362ED6D1B7359B500EAE5F5 /* SentMemsTableViewController.swift */; };
 		D3CEE0D41B711365001448F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEE0D31B711365001448F5 /* AppDelegate.swift */; };
 		D3CEE0D61B711365001448F5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CEE0D51B711365001448F5 /* ViewController.swift */; };
 		D3CEE0D91B711365001448F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3CEE0D71B711365001448F5 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D362ED6D1B7359B500EAE5F5 /* SentMemsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentMemsTableViewController.swift; sourceTree = "<group>"; };
 		D3CEE0D01B711365001448F5 /* MeMeChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MeMeChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3CEE0D31B711365001448F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D3CEE0D51B711365001448F5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				D3CEE0D31B711365001448F5 /* AppDelegate.swift */,
 				D3CEE0D51B711365001448F5 /* ViewController.swift */,
+				D362ED6D1B7359B500EAE5F5 /* SentMemsTableViewController.swift */,
 				D3FD6F141B71E17F00B728E5 /* MeMe.swift */,
 				D3CEE0D71B711365001448F5 /* Main.storyboard */,
 				D3CEE0DA1B711365001448F5 /* Assets.xcassets */,
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3CEE0D61B711365001448F5 /* ViewController.swift in Sources */,
+				D362ED6E1B7359B500EAE5F5 /* SentMemsTableViewController.swift in Sources */,
 				D3CEE0D41B711365001448F5 /* AppDelegate.swift in Sources */,
 				D3FD6F151B71E17F00B728E5 /* MeMe.swift in Sources */,
 			);
@@ -256,7 +260,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MeMeChallenge/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apress.MeMeChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -271,7 +275,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MeMeChallenge/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.apress.MeMeChallenge;
 				PRODUCT_NAME = "$(TARGET_NAME)";
