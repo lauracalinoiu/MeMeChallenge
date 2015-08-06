@@ -55,11 +55,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                             </textField>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ujj-d2-wf3">
-                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ujj-d2-wf3">
+                                <rect key="frame" x="1" y="20" width="600" height="44"/>
                                 <items>
                                     <navigationItem title="MeMe" id="OAb-oK-EDB">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="xEv-VE-8ag"/>
+                                        <barButtonItem key="leftBarButtonItem" systemItem="action" id="xEv-VE-8ag">
+                                            <connections>
+                                                <action selector="sendMeme:" destination="BYZ-38-t0r" id="KlV-qx-cVz"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="F9z-ZU-elv"/>
                                     </navigationItem>
                                 </items>
@@ -105,6 +109,8 @@
                         <outlet property="bottomTextField" destination="OO2-ic-zxc" id="r7R-lI-pM1"/>
                         <outlet property="cameraButton" destination="UIE-jn-zqb" id="9QM-De-me5"/>
                         <outlet property="imageView" destination="331-yR-UAB" id="T5b-b7-iTD"/>
+                        <outlet property="navbar" destination="ujj-d2-wf3" id="3ts-Tf-2nW"/>
+                        <outlet property="toolbar" destination="eSn-Hk-57b" id="63b-K2-uax"/>
                         <outlet property="topTextField" destination="gsx-HU-GLl" id="GvJ-Z2-bQ0"/>
                     </connections>
                 </viewController>

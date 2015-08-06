@@ -28,6 +28,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var bottomTextField: UITextField!
     @IBOutlet weak var topTextField: UITextField!
     
+    @IBOutlet weak var navbar: UINavigationBar!
+    @IBOutlet weak var toolbar: UIToolbar!
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         topTextField.text = initialTopText
@@ -54,6 +57,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         super.viewWillDisappear(animated)
         self.unsuscribeToKeyboardNotifications()
     }
+   
     func subscribeToKeyboardNotifications(){
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillHide:", name: UIKeyboardWillHideNotification, object: nil)
@@ -135,6 +139,41 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     func textFieldDidEndEditing(textField: UITextField) {
         activeTextField = nil
+    }
+    
+    @IBAction func sendMeme(sender: UIBarButtonItem) {
+        save()
+    }
+    
+    func save() {
+        //Create the meme
+        let meme = MeMe(top: topTextField.text!, bottom: bottomTextField.text!, origImage: imageView.image!, memedImg: generateMemedImage())
+        imageView.image = meme.memedImg
+    }
+    
+    func generateMemedImage() -> UIImage
+    {
+        hideToolbarAndNavbar()
+        // Render view to an image
+        UIGraphicsBeginImageContext(self.view.frame.size)
+        self.view.drawViewHierarchyInRect(self.view.frame,
+            afterScreenUpdates: true)
+        let memedImage : UIImage =
+        UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        showToolbarAndNavbar()
+        return memedImage
+    }
+    
+    func hideToolbarAndNavbar(){
+        navbar.hidden = true
+        toolbar.hidden = true
+    }
+    
+    func showToolbarAndNavbar(){
+        navbar.hidden = false
+        toolbar.hidden = false
     }
 }
 
