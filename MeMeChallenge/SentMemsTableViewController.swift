@@ -32,5 +32,11 @@ class SentMemsTableViewController: UIViewController, UITableViewDataSource, UITa
         cell.textLabel?.text = "\(memes[indexPath.row].topComment)      \(memes[indexPath.row].bottomComment)"
         return cell
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        var detailMeMeController = self.storyboard?.instantiateViewControllerWithIdentifier("DetailMeMe") as! DetailMemeViewController
+        detailMeMeController.meme = memes[indexPath.row]
+        self.navigationController!.pushViewController(detailMeMeController, animated: true)
+    }
 
 }
